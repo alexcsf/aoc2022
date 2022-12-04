@@ -7,7 +7,7 @@ splitOn d xs = case elemIndex d xs of
     _ -> error $ "Error splitting list on " ++ show d
 
 subsetOf :: Ord a => (a, a) -> (a, a) -> Bool
-subsetOf (x1, y1) (x2, y2) = x1 <= x2 && y1 >= y2
+subsetOf (x1, y1) (x2, y2) = x1 >= x2 && y1 <= y2
 
 overlaps :: Ord a => (a, a) -> (a, a) -> Bool
 overlaps (x1, y1) (x2, _) = x1 <= x2 && x2 <= y1
