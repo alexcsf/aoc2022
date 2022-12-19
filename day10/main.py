@@ -5,11 +5,9 @@ from operator import add
 def parsed_lines(file):
     yield 1
     for line in file:
+        yield 0
         parsed_line = line.rstrip().split()
-        if parsed_line[0] == "noop":
-            yield 0
-        else:
-            yield 0
+        if parsed_line[0] == "addx":
             yield int(parsed_line[1])
 
 
